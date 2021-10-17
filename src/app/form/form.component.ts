@@ -22,4 +22,9 @@ dataSource:any;
 save(){
   this.rt.navigate(["/save"])
 }
+delete(id:any){
+  this.s1.delete(id).subscribe((d)=>console.log(d))
+
+this.ngOnInit()
+}
 }

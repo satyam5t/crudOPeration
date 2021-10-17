@@ -15,9 +15,9 @@ export class SaveComponent implements OnInit {
 
   constructor(private s1:S1Service,public rt:Router) { }
 AddUser:Flow=new Flow();
-
+data:any;
   ngOnInit(): void {
-
+this.s1.GetData().subscribe((r)=>this.data=r)
 
   }
 
@@ -35,6 +35,7 @@ AddUser:Flow=new Flow();
       this.AddUser.author=d.author,
       this.AddUser.title=d.title,
       this.form.reset();
+      this.ngOnInit()
     })
   }
 this.rt.navigate(['/form'])
